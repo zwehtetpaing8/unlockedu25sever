@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grade 12 | Chapter 3 Summary</title>
+  <script>
+    MathJax = {
+      tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] },
+      chtml: { scale: 0.95 }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Source+Code+Pro:wght@400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --teal: #00c9b1; --blue: #4d96ff; --gold: #f5c518;
+      --pink: #ff6b9d; --green: #6bcb77;
+      --bg: #080c14; --card: #0d1420; --border: rgba(255,255,255,0.07);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: var(--bg); color: #e2e8f0; font-family: 'Lato', sans-serif; padding: 0 0 60px; }
+    .hero {
+      background: linear-gradient(135deg, #080c14 0%, #0d1f35 50%, #080c14 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 48px 24px 36px; text-align: center; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(0,201,177,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,201,177,0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .hero-badge {
+      display: inline-block; font-family: 'Source Code Pro', monospace; font-size: 0.7em;
+      letter-spacing: 3px; color: var(--teal); border: 1px solid rgba(0,201,177,0.3);
+      padding: 4px 14px; border-radius: 20px; margin-bottom: 16px; text-transform: uppercase;
+    }
+    .hero h1 {
+      font-family: 'Cinzel', serif; font-size: clamp(1.6em, 5vw, 2.6em); font-weight: 900;
+      background: linear-gradient(135deg, #ffffff, var(--teal));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px;
+    }
+    .hero p { color: #64748b; font-size: 0.9em; font-weight: 300; letter-spacing: 1px; }
+    .section-nav { display: flex; gap: 8px; padding: 20px 16px; overflow-x: auto; justify-content: center; flex-wrap: wrap; }
+    .nav-pill {
+      font-family: 'Source Code Pro', monospace; font-size: 0.72em; padding: 6px 14px;
+      border-radius: 20px; border: 1px solid var(--border); background: var(--card);
+      color: #94a3b8; cursor: pointer; transition: all 0.3s; white-space: nowrap;
+    }
+    .nav-pill:hover, .nav-pill.active { border-color: var(--teal); color: var(--teal); background: rgba(0,201,177,0.08); }
+    .content { max-width: 720px; margin: 0 auto; padding: 0 16px; }
+    .section { margin-bottom: 32px; }
+    .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+    .section-num { font-family: 'Source Code Pro', monospace; font-size: 0.7em; color: var(--teal); background: rgba(0,201,177,0.1); border: 1px solid rgba(0,201,177,0.3); padding: 3px 8px; border-radius: 6px; }
+    .section-title { font-family: 'Cinzel', serif; font-size: 1.1em; color: #f1f5f9; }
+    .formula-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 18px; margin-bottom: 12px; position: relative; overflow: hidden; transition: border-color 0.3s; }
+    .formula-card:hover { border-color: rgba(0,201,177,0.3); }
+    .formula-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; border-radius: 3px 0 0 3px; }
+    .fc-teal::before { background: var(--teal); }
+    .fc-blue::before { background: var(--blue); }
+    .fc-gold::before { background: var(--gold); }
+    .fc-pink::before { background: var(--pink); }
+    .fc-green::before { background: var(--green); }
+    .formula-label { font-family: 'Source Code Pro', monospace; font-size: 0.68em; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
+    .fc-teal .formula-label { color: var(--teal); }
+    .fc-blue .formula-label { color: var(--blue); }
+    .fc-gold .formula-label { color: var(--gold); }
+    .fc-pink .formula-label { color: var(--pink); }
+    .fc-green .formula-label { color: var(--green); }
+    .formula { font-family: 'Source Code Pro', monospace; font-size: 0.95em; color: #f1f5f9; line-height: 2; background: rgba(0,0,0,0.3); padding: 10px 14px; border-radius: 8px; margin: 6px 0; overflow-x: auto; }
+    .note { font-size: 0.82em; color: #64748b; margin-top: 8px; line-height: 1.6; }
+    .info-box { background: rgba(0,201,177,0.06); border: 1px solid rgba(0,201,177,0.2); border-radius: 8px; padding: 10px 14px; margin-bottom: 12px; font-size: 0.83em; color: #94a3b8; line-height: 1.7; }
+    .info-box strong { color: var(--teal); }
+    .mini-table { width: 100%; border-collapse: collapse; font-family: 'Source Code Pro', monospace; font-size: 0.8em; margin: 10px 0; }
+    .mini-table th { color: var(--teal); text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--border); font-weight: 600; letter-spacing: 1px; }
+    .mini-table td { padding: 6px 10px; border-bottom: 1px solid rgba(255,255,255,0.04); color: #cbd5e1; }
+    .step-list { list-style: none; }
+    .step-item { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-dot { min-width: 24px; height: 24px; border-radius: 50%; background: rgba(0,201,177,0.15); border: 1px solid var(--teal); color: var(--teal); font-size: 0.65em; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 2px; font-family: 'Source Code Pro', monospace; }
+    .step-text { font-size: 0.87em; color: #94a3b8; line-height: 1.6; }
+    .step-text strong { color: #e2e8f0; }
+    .final-eq { background: rgba(0,0,0,0.4); border: 1px solid rgba(0,201,177,0.25); border-radius: 8px; padding: 8px 14px; margin-top: 10px; overflow-x: auto; }
+    .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 24px 0; }
+    .footer { text-align: center; font-size: 0.75em; color: #334155; margin-top: 48px; font-family: 'Source Code Pro', monospace; }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Grade 12 · Mathematics</div>
+  <h1>Chapter 3 — Key Concepts</h1>
+  <p>Analytical Solid Geometry · Unlock Education</p>
+</div>
+
+<div class="section-nav">
+  <div class="nav-pill active">3.1 Coordinates</div>
+  <div class="nav-pill">3.2 Lines</div>
+  <div class="nav-pill">3.3 Parallel/Skew/⊥</div>
+  <div class="nav-pill">3.4 Planes</div>
+  <div class="nav-pill">3.5 Spheres</div>
+</div>
+
+<div class="content">
+
+  <!-- 3.1 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">3.1</span>
+      <span class="section-title">Coordinates of a Point in Space</span>
+    </div>
+    <div class="formula-card fc-teal">
+      <div class="formula-label">📐 Axes & Coordinate Planes</div>
+      <table class="mini-table">
+        <tr><th>Axis / Plane</th><th>Equation</th><th>Form</th></tr>
+        <tr><td>x-axis</td><td>y=0, z=0</td><td>(x, 0, 0)</td></tr>
+        <tr><td>y-axis</td><td>x=0, z=0</td><td>(0, y, 0)</td></tr>
+        <tr><td>z-axis</td><td>x=0, y=0</td><td>(0, 0, z)</td></tr>
+        <tr><td>xy-plane</td><td>z=0</td><td>(x, y, 0)</td></tr>
+        <tr><td>yz-plane</td><td>x=0</td><td>(0, y, z)</td></tr>
+        <tr><td>zx-plane</td><td>y=0</td><td>(x, 0, z)</td></tr>
+      </table>
+    </div>
+    <div class="formula-card fc-blue">
+      <div class="formula-label">📏 Distance Formula</div>
+      <div class="formula">$$PQ = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2 + (z_2-z_1)^2}$$</div>
+    </div>
+    <div class="formula-card fc-gold">
+      <div class="formula-label">📌 Lines ⊥ to Coordinate Planes</div>
+      <table class="mini-table">
+        <tr><th>Line</th><th>Equation</th><th>Form</th></tr>
+        <tr><td>⊥ to xy-plane</td><td>x=a, y=b</td><td>(a, b, z)</td></tr>
+        <tr><td>⊥ to yz-plane</td><td>y=b, z=c</td><td>(x, b, c)</td></tr>
+        <tr><td>⊥ to zx-plane</td><td>x=a, z=c</td><td>(a, y, c)</td></tr>
+      </table>
+    </div>
+    <div class="formula-card fc-green">
+      <div class="formula-label">📝 Question Types — 3.1</div>
+      <ul class="step-list">
+        <li class="step-item"><div class="step-dot">Q1</div>
+          <div class="step-text"><strong>Line ⊥ to plane through a point + find intersection</strong><br>
+          Use table → write equation form → set z=0 / x=0 / y=0 for intersection</div>
+        </li>
+        <li class="step-item"><div class="step-dot">Q2</div>
+          <div class="step-text"><strong>Plane ∥ to coordinate plane through a point</strong><br>
+          ∥ xy → z=c &nbsp;|&nbsp; ∥ yz → x=a &nbsp;|&nbsp; ∥ zx → y=b</div>
+        </li>
+        <li class="step-item"><div class="step-dot">Q3</div>
+          <div class="step-text"><strong>Distance between two points</strong><br>
+          Substitute directly into distance formula</div>
+        </li>
+        <li class="step-item"><div class="step-dot">Q4</div>
+          <div class="step-text"><strong>Show 3 points form a right triangle</strong><br>
+          Find AB², BC², AC² → check: two smaller squares sum = largest (Pythagoras)</div>
+        </li>
+        <li class="step-item"><div class="step-dot">Q5</div>
+          <div class="step-text"><strong>Show 3 points are collinear</strong><br>
+          Find AB, BC, AC → check: AB + BC = AC</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 3.2 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">3.2</span>
+      <span class="section-title">Lines</span>
+    </div>
+    <div class="formula-card fc-teal">
+      <div class="formula-label">➡️ Directed Values & Length</div>
+      <div class="formula">$$\langle PQ \rangle = \langle l,m,n \rangle = \langle x_2-x_1,\ y_2-y_1,\ z_2-z_1 \rangle$$
+$$|PQ| = \sqrt{l^2 + m^2 + n^2}$$</div>
+    </div>
+    <div class="formula-card fc-blue">
+      <div class="formula-label">📝 Equation of a Line</div>
+      <div class="formula">$$\text{Coordinate form: }(x,y,z) = (x_1+kl,\ y_1+km,\ z_1+kn)$$
+$$\text{Symmetric form: }\frac{x-x_1}{l} = \frac{y-y_1}{m} = \frac{z-z_1}{n}$$</div>
+    </div>
+    <div class="formula-card fc-green">
+      <div class="formula-label">📝 Question Types — 3.2</div>
+      <ul class="step-list">
+        <li class="step-item"><div class="step-dot">Q1</div>
+          <div class="step-text"><strong>Find coordinates of point R on line PQ for given k</strong><br>
+          Find ⟨PQ⟩ → write coordinate form → substitute k</div>
+        </li>
+        <li class="step-item"><div class="step-dot">Q2</div>
+          <div class="step-text"><strong>Check if point is on line PQ</strong><br>
+          Write coordinate form → substitute point → solve k from each equation<br>
+          ✅ All k equal → on the line &nbsp;&nbsp; ✗ k not equal → not on the line</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 3.3 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">3.3</span>
+      <span class="section-title">Parallel, Skew & Perpendicular Lines</span>
+    </div>
+    <div class="formula-card fc-teal">
+      <div class="formula-label">∥ Parallel Lines</div>
+      <div class="formula">$$\langle PQ \rangle = k\langle OA \rangle \iff PQ \parallel OA$$</div>
+      <div class="note">One directed value is a scalar multiple of the other.</div>
+    </div>
+    <div class="formula-card fc-gold">
+      <div class="formula-label">📐 Angle Between Two Lines</div>
+      <div class="formula">$$\cos\angle PAQ = \frac{l_1l_2 + m_1m_2 + n_1n_2}{\sqrt{l_1^2+m_1^2+n_1^2}\cdot\sqrt{l_2^2+m_2^2+n_2^2}}$$</div>
+    </div>
+    <div class="formula-card fc-blue">
+      <div class="formula-label">⊥ Perpendicular Lines Condition</div>
+      <div class="formula">$$l_1l_2 + m_1m_2 + n_1n_2 = 0$$</div>
+      <div class="note">Must also <strong>intersect</strong> to be truly perpendicular.</div>
+    </div>
+    <div class="formula-card fc-green">
+      <div class="formula-label">📝 Question Types — 3.3</div>
+      <ul class="step-list">
+        <li class="step-item"><div class="step-dot">Q1</div>
+          <div class="step-text"><strong>Find cos∠PAQ</strong><br>
+          Find ⟨AP⟩ and ⟨AQ⟩ → substitute into angle formula</div>
+        </li>
+        <li class="step-item"><div class="step-dot">Q2</div>
+          <div class="step-text"><strong>Parallel / Skew / Intersect</strong><br>
+          ① Check ⟨PQ⟩ = k⟨RS⟩ → yes: <strong>parallel</strong><br>
+          ② Solve simultaneous equations → consistent: <strong>intersect</strong> (check ⊥)<br>
+          ③ Contradiction → <strong>skew</strong></div>
+        </li>
+        <li class="step-item"><div class="step-dot">Q3</div>
+          <div class="step-text"><strong>Find line through point P, ⊥ to given line</strong><br>
+          ① Directed values of required line = ⟨P − point on given line with k⟩<br>
+          ② Dot product = 0 → find k → get directed values<br>
+          ③ Write line equation → find intersection point</div>
+        </li>
+        <li class="step-item"><div class="step-dot">Q4</div>
+          <div class="step-text"><strong>Show two lines are perpendicular</strong><br>
+          ① Show they intersect (find s and t)<br>
+          ② Show l₁l₂ + m₁m₂ + n₁n₂ = 0 ✓</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 3.4 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">3.4</span>
+      <span class="section-title">Planes</span>
+    </div>
+    <div class="info-box">
+      💡 <strong>Key Rule:</strong> When a line is ⊥ to plane <strong>ax+by+cz=d</strong>, its directed values are <strong>⟨a, b, c⟩</strong> — the coefficients of the plane become the directed values of the perpendicular line.
+    </div>
+    <div class="formula-card fc-teal">
+      <div class="formula-label">📐 Q1 — Equation of Plane Through 3 Points A, B, C</div>
+      <ul class="step-list">
+        <li class="step-item"><div class="step-dot">1</div>
+          <div class="step-text">Find <strong>⟨AB⟩ = ⟨l₁,m₁,n₁⟩</strong> and <strong>⟨AC⟩ = ⟨l₂,m₂,n₂⟩</strong></div>
+        </li>
+        <li class="step-item"><div class="step-dot">2</div>
+          <div class="step-text">Find normal vector:<br>
+          a = m₁n₂ − m₂n₁ &nbsp;|&nbsp; b = n₁l₂ − n₂l₁ &nbsp;|&nbsp; c = l₁m₂ − l₂m₁</div>
+        </li>
+        <li class="step-item"><div class="step-dot">3</div>
+          <div class="step-text">Find d = ax₁ + by₁ + cz₁ using any of the 3 points</div>
+        </li>
+        <li class="step-item"><div class="step-dot">4</div>
+          <div class="step-text">Write equation of the plane:</div>
+        </li>
+      </ul>
+      <div class="final-eq">$$\boxed{ax + by + cz = d}$$</div>
+    </div>
+    <div class="formula-card fc-blue">
+      <div class="formula-label">📌 Q2 — Line Through Point ⊥ to Plane → Find Intersection</div>
+      <div class="info-box" style="margin-bottom:10px;">
+        Directed values of ⊥ line = <strong>⟨a, b, c⟩</strong> from plane ax+by+cz=d
+      </div>
+      <ul class="step-list">
+        <li class="step-item"><div class="step-dot">1</div>
+          <div class="step-text">Write line: (x,y,z) = (x₁+ak, y₁+bk, z₁+ck)</div>
+        </li>
+        <li class="step-item"><div class="step-dot">2</div>
+          <div class="step-text">Substitute into plane equation → find <strong>k</strong></div>
+        </li>
+        <li class="step-item"><div class="step-dot">3</div>
+          <div class="step-text">Substitute k back → find <strong>intersection point P</strong></div>
+        </li>
+      </ul>
+    </div>
+    <div class="formula-card fc-gold">
+      <div class="formula-label">∥ Q3 — Plane Parallel to Given Plane Through a Point</div>
+      <div class="info-box" style="margin-bottom:10px;">
+        Parallel planes share same <strong>⟨a, b, c⟩</strong> — only d changes
+      </div>
+      <ul class="step-list">
+        <li class="step-item"><div class="step-dot">1</div>
+          <div class="step-text">Keep same a, b, c from given plane</div>
+        </li>
+        <li class="step-item"><div class="step-dot">2</div>
+          <div class="step-text">Find d = ax₁ + by₁ + cz₁ using the given point</div>
+        </li>
+        <li class="step-item"><div class="step-dot">3</div>
+          <div class="step-text">Write equation of the plane:</div>
+        </li>
+      </ul>
+      <div class="final-eq">$$\boxed{ax + by + cz = d}$$</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 3.5 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">3.5</span>
+      <span class="section-title">Spheres</span>
+    </div>
+    <div class="formula-card fc-teal">
+      <div class="formula-label">⭕ Equation of a Sphere</div>
+      <div class="final-eq">$$\boxed{(x-x_1)^2 + (y-y_1)^2 + (z-z_1)^2 = r^2}$$</div>
+      <div class="note">Center: (x₁,y₁,z₁) &nbsp;|&nbsp; Radius: r</div>
+    </div>
+    <div class="formula-card fc-pink">
+      <div class="formula-label">📌 Point vs Sphere</div>
+      <table class="mini-table">
+        <tr><th>Condition</th><th>Position</th></tr>
+        <tr><td>CP &lt; r</td><td>Inside the sphere</td></tr>
+        <tr><td>CP = r</td><td>On the sphere</td></tr>
+        <tr><td>CP &gt; r</td><td>Outside the sphere</td></tr>
+      </table>
+    </div>
+    <div class="info-box">
+      💡 <strong>Key Rule:</strong> When a line is ⊥ to a plane, its directed values become <strong>⟨a, b, c⟩</strong> of that plane. This applies to both tangent planes and touching planes in sphere problems.
+    </div>
+    <div class="formula-card fc-blue">
+      <div class="formula-label">📐 Q1 — Tangent Plane to Sphere at Point P</div>
+      <div class="info-box" style="margin-bottom:10px;">
+        Line CP ⊥ tangent plane → <strong>⟨CP⟩ = ⟨a,b,c⟩</strong> of the tangent plane
+      </div>
+      <ul class="step-list">
+        <li class="step-item"><div class="step-dot">1</div>
+          <div class="step-text">Find <strong>⟨CP⟩</strong> = directed values from center C to point P on sphere → these become <strong>⟨a,b,c⟩</strong></div>
+        </li>
+        <li class="step-item"><div class="step-dot">2</div>
+          <div class="step-text">Tangent plane form: ax+by+cz=d</div>
+        </li>
+        <li class="step-item"><div class="step-dot">3</div>
+          <div class="step-text">Substitute point P → find d</div>
+        </li>
+        <li class="step-item"><div class="step-dot">4</div>
+          <div class="step-text">Write equation of the tangent plane:</div>
+        </li>
+      </ul>
+      <div class="final-eq">$$\boxed{ax + by + cz = d}$$</div>
+    </div>
+    <div class="formula-card fc-gold">
+      <div class="formula-label">💡 Q2 — Sphere with Center C Touching a Plane</div>
+      <div class="info-box" style="margin-bottom:10px;">
+        Line from C ⊥ to plane ax+by+cz=d has directed values <strong>⟨a,b,c⟩</strong>
+      </div>
+      <ul class="step-list">
+        <li class="step-item"><div class="step-dot">1</div>
+          <div class="step-text">Write line through center C using <strong>⟨a,b,c⟩</strong> from the plane:<br>
+          (x,y,z) = (xc+ak, yc+bk, zc+ck)</div>
+        </li>
+        <li class="step-item"><div class="step-dot">2</div>
+          <div class="step-text">Substitute into plane equation → find <strong>k</strong> → find touching point</div>
+        </li>
+        <li class="step-item"><div class="step-dot">3</div>
+          <div class="step-text">Find r = distance from center to touching point</div>
+        </li>
+        <li class="step-item"><div class="step-dot">4</div>
+          <div class="step-text">Write equation of the sphere:</div>
+        </li>
+      </ul>
+      <div class="final-eq">$$\boxed{(x-x_c)^2 + (y-y_c)^2 + (z-z_c)^2 = r^2}$$</div>
+    </div>
+    <div class="formula-card fc-green">
+      <div class="formula-label">🔵 Q3 — Sphere on Diameter AB</div>
+      <ul class="step-list">
+        <li class="step-item"><div class="step-dot">1</div>
+          <div class="step-text">Center = Midpoint of A and B</div>
+        </li>
+        <li class="step-item"><div class="step-dot">2</div>
+          <div class="step-text">Find AB → Radius r = AB / 2</div>
+        </li>
+        <li class="step-item"><div class="step-dot">3</div>
+          <div class="step-text">Write equation of the sphere:</div>
+        </li>
+      </ul>
+      <div class="final-eq">$$\boxed{(x-x_1)^2 + (y-y_1)^2 + (z-z_1)^2 = r^2}$$</div>
+    </div>
+    <div class="formula-card fc-pink">
+      <div class="formula-label">🌐 Q4 — Sphere Through 3 Points, Center on Plane / Axis</div>
+      <ul class="step-list">
+        <li class="step-item"><div class="step-dot">1</div>
+          <div class="step-text">Let center = C(x₁,y₁,z₁) with constraint (e.g. on yz-plane → x₁=0)</div>
+        </li>
+        <li class="step-item"><div class="step-dot">2</div>
+          <div class="step-text">Set up 3 equations: distance from C to each point = r<br>
+          → expand and set equal pairwise</div>
+        </li>
+        <li class="step-item"><div class="step-dot">3</div>
+          <div class="step-text">Subtract equations to eliminate r² → solve system for x₁,y₁,z₁</div>
+        </li>
+        <li class="step-item"><div class="step-dot">4</div>
+          <div class="step-text">Find r² by substituting center back → write equation of the sphere:</div>
+        </li>
+      </ul>
+      <div class="final-eq">$$\boxed{(x-x_1)^2 + (y-y_1)^2 + (z-z_1)^2 = r^2}$$</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    © Unlock Education · U Zwe Htet Paing (B.Ed.) · Grade 12 Mathematics
+  </div>
+
+</div>
+
+<script>
+  document.querySelectorAll('.nav-pill').forEach(pill => {
+    pill.addEventListener('click', function() {
+      document.querySelectorAll('.nav-pill').forEach(p => p.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
